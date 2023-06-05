@@ -10,6 +10,11 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+@media (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   font-family: "Nunito", sans-serif;
@@ -22,6 +27,12 @@ body {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [side-start] 8rem [side-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+}
+@media (max-width: 62.5em) {
+  .container {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [side-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  }
 }
 
 .mb-sm {
@@ -94,6 +105,16 @@ body {
   background-color: #c69963;
   grid-column: side-start/side-end;
   grid-row: 1/-1;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 62.5em) {
+  .sidebar {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 
 .nav-btn {
@@ -102,8 +123,14 @@ body {
   background-color: #fff;
   border-radius: 0;
   border: none;
-  margin: 4rem auto 0;
+  margin-top: 4rem;
   display: block;
+}
+@media (max-width: 62.5em) {
+  .nav-btn {
+    margin-top: 0;
+    margin-right: 3rem;
+  }
 }
 .nav-btn::after, .nav-btn::before {
   content: "";
@@ -115,8 +142,18 @@ body {
 .nav-btn::after {
   transform: translateY(calc(1.5rem - 2px));
 }
+@media (max-width: 62.5em) {
+  .nav-btn::after {
+    transform: translateY(calc(1.2rem - 2px));
+  }
+}
 .nav-btn::before {
   transform: translateY(-1.5rem);
+}
+@media (max-width: 62.5em) {
+  .nav-btn::before {
+    transform: translateY(-1.2rem);
+  }
 }
 
 .header {
@@ -125,7 +162,7 @@ body {
   background-size: cover;
   background-position: center;
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-rows: 1fr min-content minmax(min-content, 6rem) 1fr;
   grid-template-columns: minmax(min-content, max-content);
   grid-gap: 1.5rem;
   padding: 6rem;
@@ -139,10 +176,12 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+  align-items: center;
   grid-column-gap: 3rem;
 }
 .header__seen-logo img {
-  height: 2.5rem;
+  max-height: 2.5rem;
+  max-width: 100%;
   filter: brightness(70%);
 }
 .header__btn {
