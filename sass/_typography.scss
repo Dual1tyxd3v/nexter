@@ -3,6 +3,13 @@
   font-weight: 400;
 }
 
+.header-1 {
+  @include header;
+  font-size: 4.5rem;
+  color: $color-grey-light-1;
+  line-height: 1
+}
+
 .header-4 {
   @include header;
   font-size: 1.9rem;

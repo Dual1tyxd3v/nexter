@@ -23,10 +23,6 @@ body {
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [side-start] 8rem [side-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
-.container > * {
-  font-size: 3rem;
-  padding: 1rem;
-}
 
 .mb-sm {
   margin-bottom: 2rem;
@@ -34,6 +30,14 @@ body {
 
 .mb-md {
   margin-bottom: 3rem;
+}
+
+.header-1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 4.5rem;
+  color: #f9f7f6;
+  line-height: 1;
 }
 
 .header-4 {
@@ -116,8 +120,27 @@ body {
 }
 
 .header {
-  background-color: #54483A;
   grid-column: full-start/col-end 6;
+  background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: max-content;
+  grid-gap: 1.5rem;
+  padding: 6rem;
+  padding-top: 4rem;
+}
+.header__logo {
+  height: 3rem;
+  justify-self: center;
+}
+.header__seen-logo img {
+  height: 2.5rem;
+}
+.header__btn {
+  justify-self: start;
+  align-self: start;
 }
 
 .realtors {
