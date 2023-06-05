@@ -3,3 +3,30 @@
   grid-column: side-start / side-end;
   grid-row: 1 / -1;
 }
+
+.nav-btn {
+  height: 2px;
+  width: 4.5rem;
+  background-color: #fff;
+  border-radius: 0;
+  border: none;
+  margin: 4rem auto 0;
+  display: block;
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 4.5rem;
+    background-color: #fff;
+  }
+
+  &::after {
+    transform: translateY(calc(1.5rem - 2px));
+  }
+
+  &::before {
+    transform: translateY(-1.5rem);
+  }
+}
