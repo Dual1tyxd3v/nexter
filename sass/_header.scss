@@ -10,6 +10,14 @@
   padding: 6rem;
   padding-top: 4rem;
 
+  @media (max-width: $bp-small) {
+    grid-column: 1 / -1;
+  }
+
+  @media (max-width: $bp-mini) {
+    padding: 5rem;
+  }
+
   &__logo {
     height: 3rem;
     justify-self: center;
